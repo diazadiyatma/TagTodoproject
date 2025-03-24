@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/backgrounddiaz">
+
+    <!-- Button "User" di pojok kanan atas -->
+    <ImageButton
+        android:id="@+id/btnUser"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_user"
+        android:contentDescription="User" />
+
+    <!-- ImageView di kiri pojok atas -->
+
+    <!-- TextView untuk judul "Category" -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="131dp"
+        android:layout_height="98dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/logodiaz" />
+
+    <TextView
+        android:id="@+id/tvCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CATEGORY"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="24dp" />
+
+    <!-- GridLayout untuk menampung 4 ImageButton -->
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:layout_marginTop="30dp"
+        android:background="@color/bluet2"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false"
+        android:padding="8dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tvCategory">
+
+        <!-- ImageButton 1 -->
+        <ImageButton
+            android:id="@+id/ibCategory1"
+            android:layout_width="169dp"
+            android:layout_height="192dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="School"
+            android:src="@drawable/sekulah" />
+
+        <!-- ImageButton 2 -->
+        <ImageButton
+            android:id="@+id/ibCategory2"
+            android:layout_width="162dp"
+            android:layout_height="191dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Work"
+            android:src="@drawable/rodi" />
+
+        <!-- ImageButton 3 -->
+        <ImageButton
+            android:id="@+id/ibCategory3"
+            android:layout_width="162dp"
+            android:layout_height="191dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Exercise"
+            android:src="@drawable/gym" />
+
+        <!-- ImageButton 4 -->
+        <ImageButton
+            android:id="@+id/ibCategory4"
+            android:layout_width="162dp"
+            android:layout_height="191dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Home"
+            android:src="@drawable/rumah" />
+    </GridLayout>
+</RelativeLayout>

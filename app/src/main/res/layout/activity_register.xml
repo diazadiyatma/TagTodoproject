@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/backgrounddiaz">
+
+    <!-- Logo ImageView -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="271dp"
+        android:layout_height="264dp"
+        android:layout_marginTop="1dp"
+        android:src="@drawable/logodiaz"
+        android:layout_gravity="center_horizontal" />
+
+    <!-- Email EditText -->
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:layout_marginTop="40dp"
+        android:hint="Email"
+        android:textSize="15sp"
+        android:inputType="textEmailAddress" />
+
+    <!-- Password EditText -->
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:backgroundTint="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="15sp"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <!-- Confirm Password EditText -->
+    <EditText
+        android:id="@+id/etConfirmPassword"
+        android:layout_width="match_parent"
+        android:backgroundTint="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="15sp"
+        android:hint="Confirm Password"
+        android:inputType="textPassword" />
+
+    <!-- Register Button -->
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Register"
+        android:backgroundTint="@color/bluet2" />
+
+    <!-- Login TextView -->
+    <TextView
+        android:id="@+id/tvLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Sudah punya akun? Login disini"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:focusable="true" />
+</LinearLayout>

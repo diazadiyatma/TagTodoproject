@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "981351055062",
+    "project_id": "tagtodoproject-a5908",
+    "storage_bucket": "tagtodoproject-a5908.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:981351055062:android:19214aae13a1ed4f391377",
+        "android_client_info": {
+          "package_name": "com.example.tagtodoproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDn2_pyCdyfYnEVwS7ZuIorGLmI_3l1QMk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/backgrounddiaz">
+
+    <!-- ImageView untuk menampilkan gambar kategori -->
+    <ImageView
+        android:id="@+id/ivCategoryImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp" />
+
+    <!-- TextView untuk menampilkan kategori -->
+    <TextView
+        android:id="@+id/tvCategoryTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Input Task -->
+    <EditText
+        android:id="@+id/etTaskName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nama Tugas" />
+
+    <EditText
+        android:id="@+id/etTaskTags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tags (contoh: Work, Personal)" />
+
+    <Button
+        android:id="@+id/btnPickDate"
+        android:layout_width="match_parent"
+        android:backgroundTint="@color/bluet2"
+        android:layout_height="wrap_content"
+        android:text="Pilih Tanggal" />
+
+    <Button
+        android:id="@+id/btnAddTask"
+        android:layout_width="match_parent"
+        android:backgroundTint="@color/bluet2"
+        android:layout_height="wrap_content"
+        android:text="Tambah Tugas"
+        android:layout_marginTop="8dp" />
+
+    <!-- Daftar Task -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTasks"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp" />
+</LinearLayout>
