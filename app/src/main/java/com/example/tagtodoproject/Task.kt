@@ -1,15 +1,26 @@
 package com.example.tagtodoproject
 
-import com.google.firebase.firestore.PropertyName
+import com.google.firebase.firestore.Exclude
+import com.google.firebase.firestore.IgnoreExtraProperties
 
+@IgnoreExtraProperties
 data class Task(
-    @get:PropertyName("id") @set:PropertyName("id") var id: Int = 0,
-    @get:PropertyName("name") @set:PropertyName("name") var name: String = "",
-    @get:PropertyName("date") @set:PropertyName("date") var date: String = "",
-    @get:PropertyName("tags") @set:PropertyName("tags") var tags: String = "",
-    @get:PropertyName("category") @set:PropertyName("category") var category: String = "",
-    @get:PropertyName("isCompleted") @set:PropertyName("isCompleted") var isCompleted: Boolean = false
+    var name: String = "",
+    var date: String = "",
+    var tags: String = "",
+    var category: String = "",
+    var isCompleted: Boolean = false
 ) {
-    // Konstruktor kosong untuk Firebase
-    constructor() : this(0, "", "", "", "", false)
+    @Exclude
+    var documentId: String = ""
+
+    fun toMap(): Map<String, Any> {
+        return mapOf(
+            "name" to name,
+            "date" to date,
+            "tags" to tags,
+            "category" to category,
+            "isCompleted" to isCompleted
+        )
+    }
 }
