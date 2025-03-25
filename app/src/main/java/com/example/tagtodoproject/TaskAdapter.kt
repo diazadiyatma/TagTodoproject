@@ -12,7 +12,7 @@ class TaskAdapter(
     private val tasks: MutableList<Task>,
     private val onEditClick: (Task, Int) -> Unit,
     private val onDeleteClick: (Int) -> Unit,
-    private val onCheckboxClick: (Task, Int) -> Unit // Callback untuk checkbox
+    private val onCheckboxClick: (Task, Int) -> Unit
 ) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
     inner class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -23,34 +23,36 @@ class TaskAdapter(
         private val tvTaskCategory: TextView = itemView.findViewById(R.id.tvTaskCategory)
         private val btnEdit: Button = itemView.findViewById(R.id.btnEdit)
         private val btnDelete: Button = itemView.findViewById(R.id.btnDelete)
+        private var currentTask: Task? = null
 
         fun bind(task: Task, position: Int) {
+            currentTask = task
             tvTaskName.text = task.name
-            tvTaskDate.text = "Tanggal: ${task.date}"
+            tvTaskDate.text = "Date: ${task.date}"
             tvTaskTags.text = "Tags: ${task.tags}"
-            tvTaskCategory.text = "Kategori: ${task.category}"
+            tvTaskCategory.text = "Category: ${task.category}"
+
+            // Remove previous listener to avoid duplicates
+            cbTaskCompleted.setOnCheckedChangeListener(null)
             cbTaskCompleted.isChecked = task.isCompleted
 
-            // Checkbox untuk menandai tugas selesai
-            cbTaskCompleted.setOnClickListener {
-                onCheckboxClick(task, position)
+            // Set new listener
+            cbTaskCompleted.setOnCheckedChangeListener { _, isChecked ->
+                if (isChecked != task.isCompleted) {
+                    onCheckboxClick(task, position)
+                }
             }
 
-            // Tombol Edit
-            btnEdit.setOnClickListener {
-                onEditClick(task, position)
-            }
-
-            // Tombol Hapus
-            btnDelete.setOnClickListener {
-                onDeleteClick(position)
-            }
+            btnEdit.setOnClickListener { onEditClick(task, position) }
+            btnDelete.setOnClickListener { onDeleteClick(position) }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_task, parent, false)
-        return TaskViewHolder(view)
+        return TaskViewHolder(
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.item_task, parent, false)
+        )
     }
 
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
